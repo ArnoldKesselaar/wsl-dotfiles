@@ -105,8 +105,9 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 
 ### Create
 
-Shell
+```shell script
 gpg --full-generate-key
+```
 
 At the prompt, specify the key size you want, or press Enter to accept the default.
 
@@ -119,22 +120,25 @@ Enter your user ID information.
 Type a secure passphrase.
 
 
-Shell
+```shell script
 gpg --list-secret-keys --keyid-format=long
-
+```
 From the list of GPG keys, copy the long form of the GPG key ID you'd like to use. In this example, the GPG key ID is 3AA5C34371567BD2:
 
-Shell
 
+```shell script
 $ gpg --list-secret-keys --keyid-format=long
 /Users/hubot/.gnupg/secring.gpg
 ------------------------------------
 sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
 uid                          Hubot <hubot@example.com>
 ssb   4096R/4BB6D45482678BE3 2016-03-10
+```
 Paste the text below, substituting in the GPG key ID you'd like to use. In this example, the GPG key ID is 3AA5C34371567BD2:
 
+```shell script
 gpg --armor --export 3AA5C34371567BD2
+```
 # Prints the GPG key ID, in ASCII armor format
 Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
 
@@ -150,8 +154,8 @@ Setup Git
 #!/bin/bash
 
 # Set username and email for next commands
-email="contact@alex-d.fr"
-username="Alex-D"
+email="arnold.kesselaar@gmail.com"
+username="arnoldkesselaar"
 gpgkeyid="8FA78E6580B1222A"
 
 # Configure Git
